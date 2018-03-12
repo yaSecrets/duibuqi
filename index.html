@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对不起</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+	 <div id="banner_tabs" class="flexslider">
+        <ul class="slides">
+            <li>
+                <a title="" target="_blank" href="#">
+                    <img width="960" height="482" alt="" src="images/lp.jpg">
+                </a>
+            </li>
+            <li>
+                <a title="" href="#">
+                    <img width="960" height="482" alt=""  src="images/wr.jpg">
+                </a>
+            </li>
+            <li>
+                <a title="" href="#">
+                    <img width="960" height="482" alt=""  src="images/ta.jpg">
+                </a>
+            </li>
+        </ul>
+        <ul class="flex-direction-nav">
+            <li><a class="flex-prev" href="javascript:;">Previous</a></li>
+            <li><a class="flex-next" href="javascript:;">Next</a></li>
+        </ul>
+        <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+            <li><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a>2</a></li>
+        </ol>
+    </div>
+    </div>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var bannerSlider = new Slider($('#banner_tabs'), {
+            time: 5000,
+            delay: 400,
+            event: 'hover',
+            auto: true,
+            mode: 'fade',
+            controller: $('#bannerCtrl'),
+            activeControllerCls: 'active'
+        });
+        $('#banner_tabs .flex-prev').click(function() {
+            bannerSlider.prev()
+        });
+        $('#banner_tabs .flex-next').click(function() {
+            bannerSlider.next()
+        });
+    })
+    </script>
+</body>
+</html>
